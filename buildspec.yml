@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - msbuild /t:Clean
+  build:
+    commands:
+      - msbuild /t:Compile
+  post_build:
+    commands:
+      - dotnet bin\Debug\netcoreapp2.1\publish\dotnet-console.dll
+artifacts:
+  files:
+    - '**/*'

@@ -5,7 +5,7 @@ phases:
     runtime-versions:
       dotnet: 5.0  
   pre_build:
-    commands: dotnet clean
+    commands: dotnet clean dotnet-console.csproj 
   build:
     commands:
       - dotnet build dotnet-console.csproj -c Release

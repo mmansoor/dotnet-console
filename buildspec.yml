@@ -4,12 +4,14 @@ phases:
   install:
     runtime-versions:
       dotnet: 5.0  
+  pre_build:
+    commands: dotnet clean
   build:
     commands:
-      - dotnet build -c Release
+      - dotnet build dotnet-console.csproj -c Release
   post_build:
     commands:
-      - dotnet run 
+      - dotnet run dotnet-console.csproj
 artifacts:
   files:
     - '**/*'

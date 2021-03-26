@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace new_console
+namespace dotnet_console
 {
     class Program
     {

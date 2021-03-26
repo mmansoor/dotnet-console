@@ -8,10 +8,10 @@ phases:
     commands: dotnet clean dotnet-console.csproj 
   build:
     commands:
-      - dotnet build dotnet-console.csproj -c Release
+      - dotnet build -c Release dotnet-console.csproj
   post_build:
     commands:
-      - bin\Debug\net5.0\dotnet-console.exe
+      - dotnet run bin\Release\net5.0\dotnet-console.dll
 artifacts:
   files:
     - '**/*'

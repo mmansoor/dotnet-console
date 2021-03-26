@@ -3,13 +3,13 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      dotnet: 2.1  
+      dotnet: 5.0  
   build:
     commands:
       - dotnet build -c Release
   post_build:
     commands:
-      - dotnet run bin\Debug\netcoreapp2.1\publish\dotnet-console.dll
+      - dotnet run 
 artifacts:
   files:
     - '**/*'

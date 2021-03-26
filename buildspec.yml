@@ -2,14 +2,15 @@ version: 0.2
 
 phases:
   install:
-    commands:
-      - msbuild /t:Clean
+    install:
+        runtime-versions:
+            dotnet: 3.1  
   build:
     commands:
-      - msbuild /t:Compile
+      - dotnet build -c Release
   post_build:
     commands:
-      - dotnet bin\Debug\netcoreapp2.1\publish\dotnet-console.dll
+      - dotnet run bin\Debug\netcoreapp2.1\publish\dotnet-console.dll
 artifacts:
   files:
     - '**/*'
